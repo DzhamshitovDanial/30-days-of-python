@@ -1,0 +1,9 @@
+cat={'name':'pluto','color':'grey','breed':'scottish','legs':4,'age':5}
+student={'first_name':'Danial','last_name':'Dzhamshitov','gender':'Man','age':15,'marital_status':'Single','skills':['Python','html','css'],'country':'Kazakstan','city':'Baikonur','address':{'street':'gorki22','zipcode':'12345'}}
+print(len(student))
+print(student['skills'],type(student['skills']))
+student['skills'].append('sql')
+print(student['skills'])
+print(student.keys())
+print(student.values())
+print(student.items())
