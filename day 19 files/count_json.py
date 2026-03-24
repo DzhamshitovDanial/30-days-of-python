@@ -1,8 +1,5 @@
 import json
-def most():
-    with open('30-days-of-python\day 19 files\countries_data.json','r') as f:
-        data=json.load(f)
-
+def most(data):
     all_languages=[]
     for i in range(len(data)):
         all_languages.extend(data[i]['languages'])
@@ -17,4 +14,21 @@ def most():
     n=int(input())
     print(sorted_list[:n],sep='\n')
 
-most()
+def most_populated_countries(data):
+    sorted_population=sorted(data,key=lambda x:x['population'],reverse=True)
+    print(sorted_population)
+    lst=[]
+    for i in sorted_population:
+        lst.append({
+            'country': i['name'],
+            'population': i['population']
+        })
+    n=int(input())
+    jsonlst=(lst[:n])
+    print(json.dumps(jsonlst,indent=4))
+
+
+
+with open('day 19 files\countries_data.json','r') as f:
+    data=json.load(f)
+most_populated_countries(data)
